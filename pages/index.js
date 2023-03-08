@@ -1,7 +1,25 @@
+import useSWR from "swr";
+import Image from "next/image";
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 export default function HomePage() {
+  const { data = [] } = useSWR(
+    "https://example-apis.vercel.app/api/art",
+    fetcher
+  );
+  console.log(data);
   return (
     <div>
-      <h1>Hello from Next.js</h1>
+      <ul>
+        {data.map(({ name, artist, imageSource, slug }) => (
+          <li key={slug}>
+            <p>{name}</p>
+            <p>{artist}</p>
+            <Image src={imageSource} height={100} width={100} alt={name} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
