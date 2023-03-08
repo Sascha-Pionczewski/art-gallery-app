@@ -11,10 +11,10 @@ export default function HomePage() {
   console.log(data);
   return (
     <div>
-      <ul>
+      <ul style={{ listStyle: "none" }}>
         {data.map(({ name, artist, imageSource, slug }) => (
           <li key={slug}>
-            <p>{name}</p>
+            <p style={{ fontWeight: "bold" }}>{name}</p>
             <p>{artist}</p>
             <Image src={imageSource} height={100} width={100} alt={name} />
           </li>
