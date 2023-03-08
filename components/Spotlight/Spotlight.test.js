@@ -1,9 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import ArtPieces from "./index.js";
+import Spotlight from "./index.js";
 
 const mockData = [
   {
-    slug: "flatlay-photography-of-brea-and-fruits",
     imageSource:
       "https://example-apis.vercel.app/assets/art/flatlay-photography-of-brea-and-fruits.jpg",
     artist: "Max Mustermann",
@@ -11,8 +10,8 @@ const mockData = [
   },
 ];
 
-test("All art pieces are displayed as a list", () => {
-  render(<ArtPieces pieces={mockData} />);
-  const artPieces = screen.getByRole("list");
-  expect(artPieces).toBeInTheDocument();
+test("show random art piece", () => {
+  render(<Spotlight pieces={mockData} />);
+  const randomPiece = screen.getByRole("random");
+  expect(randomPiece).toBeInTheDocument();
 });
