@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import { useContext } from "react";
+import { ThemeContext } from "../../pages/_app";
 
-export default function ArtPieces({ pieces }) {
+export default function ArtPieces() {
+  const pieces = useContext(ThemeContext);
   return (
     <div>
       <ul style={{ listStyle: "none" }} role="list" aria-label="list of art">
