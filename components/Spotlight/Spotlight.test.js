@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import Spotlight from "./index.js";
+import Spotlight from ".";
 
 const mockData = [
   {

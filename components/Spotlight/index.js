@@ -10,7 +10,6 @@ export default function Spotlight() {
     return pieces[randomArtNumber];
   }
   const randomPiece = handleRandomPick();
-  console.log(pieces);
   if (!randomPiece) {
     return <p>Loading......</p>;
   }
